@@ -1,0 +1,240 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "ir",
+      "display_name": "R"
+    },
+    "language_info": {
+      "name": "R"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Item 1"
+      ],
+      "metadata": {
+        "id": "r2KbDEe2BqCS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "mean_signal <- 200\n",
+        "sd_signal <- sqrt(256)\n",
+        "\n",
+        "p_exceed_224 <- pnorm(224, mean=mean_signal, sd=sd_signal, lower.tail=FALSE)\n",
+        "p_exceed_224\n",
+        "\n",
+        "p_between_186_224 <- pnorm(224, mean=mean_signal, sd=sd_signal) - pnorm(186, mean=mean_signal, sd=sd_signal)\n",
+        "p_between_186_224\n",
+        "\n",
+        "voltage_25_percent <- qnorm(0.25, mean=mean_signal, sd=sd_signal)\n",
+        "voltage_25_percent\n",
+        "\n",
+        "numerator <- pnorm(240, mean=mean_signal, sd=sd_signal) - pnorm(210, mean=mean_signal, sd=sd_signal)\n",
+        "denominator <- pnorm(210, mean=mean_signal, sd=sd_signal, lower.tail=FALSE)\n",
+        "p_given_210 <- numerator / denominator\n",
+        "p_given_210\n",
+        "\n",
+        "q3 <- qnorm(0.75, mean=mean_signal, sd=sd_signal)\n",
+        "q1 <- qnorm(0.25, mean=mean_signal, sd=sd_signal)\n",
+        "iqr <- q3 - q1\n",
+        "iqr\n",
+        "\n",
+        "numerator2 <- pnorm(220, mean=mean_signal, sd=sd_signal) - pnorm(210, mean=mean_signal, sd=sd_signal)\n",
+        "denominator2 <- pnorm(210, mean=mean_signal, sd=sd_signal, lower.tail=FALSE)\n",
+        "p_less220_given_greater210 <- numerator2 / denominator2\n",
+        "p_less220_given_greater210\n",
+        "\n",
+        "numerator3 <- pnorm(220, mean=mean_signal, sd=sd_signal, lower.tail=FALSE)\n",
+        "denominator3 <- pnorm(200, mean=mean_signal, sd=sd_signal, lower.tail=FALSE)\n",
+        "p_greater220_given_greater200 <- numerator3 / denominator3\n",
+        "p_greater220_given_greater200"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 139
+        },
+        "id": "Q4CGEuyQBprR",
+        "outputId": "c5ba4666-2eb6-4a9a-e9d7-fc96289a1638"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "0.0668072012688581"
+            ],
+            "text/markdown": "0.0668072012688581",
+            "text/latex": "0.0668072012688581",
+            "text/plain": [
+              "[1] 0.0668072"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "0.742405845878631"
+            ],
+            "text/markdown": "0.742405845878631",
+            "text/latex": "0.742405845878631",
+            "text/plain": [
+              "[1] 0.7424058"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "189.208163996863"
+            ],
+            "text/markdown": "189.208163996863",
+            "text/latex": "189.208163996863",
+            "text/plain": [
+              "[1] 189.2082"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "0.97665412344805"
+            ],
+            "text/markdown": "0.97665412344805",
+            "text/latex": "0.97665412344805",
+            "text/plain": [
+              "[1] 0.9766541"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "21.5836720062746"
+            ],
+            "text/markdown": "21.5836720062746",
+            "text/latex": "21.5836720062746",
+            "text/plain": [
+              "[1] 21.58367"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "0.602798791179684"
+            ],
+            "text/markdown": "0.602798791179684",
+            "text/latex": "0.602798791179684",
+            "text/plain": [
+              "[1] 0.6027988"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "0.21129954733371"
+            ],
+            "text/markdown": "0.21129954733371",
+            "text/latex": "0.21129954733371",
+            "text/plain": [
+              "[1] 0.2112995"
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Item 2"
+      ],
+      "metadata": {
+        "id": "-26un7mTBq2z"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 52
+        },
+        "id": "5RuqlZvH8xxH",
+        "outputId": "5fe16477-2f6b-42a0-bf1f-e9793b9a93e2"
+      },
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "<style>\n",
+              ".list-inline {list-style: none; margin:0; padding: 0}\n",
+              ".list-inline>li {display: inline-block}\n",
+              ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+              "</style>\n",
+              "<ol class=list-inline><li>1.48043218551935</li><li>48.5195678144806</li></ol>\n"
+            ],
+            "text/markdown": "1. 1.48043218551935\n2. 48.5195678144806\n\n\n",
+            "text/latex": "\\begin{enumerate*}\n\\item 1.48043218551935\n\\item 48.5195678144806\n\\end{enumerate*}\n",
+            "text/plain": [
+              "[1]  1.480432 48.519568"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/html": [
+              "40.3786187865352"
+            ],
+            "text/markdown": "40.3786187865352",
+            "text/latex": "40.3786187865352",
+            "text/plain": [
+              "[1] 40.37862"
+            ]
+          },
+          "metadata": {}
+        }
+      ],
+      "source": [
+        "mean_downtime <- 25\n",
+        "sd_downtime <- sqrt(144)\n",
+        "\n",
+        "lower_bound_95 <- qnorm(0.025, mean=mean_downtime, sd=sd_downtime)\n",
+        "upper_bound_95 <- qnorm(0.975, mean=mean_downtime, sd=sd_downtime)\n",
+        "bounds_95 <- c(lower_bound_95, upper_bound_95)\n",
+        "bounds_95\n",
+        "\n",
+        "bound_90th_percentile <- qnorm(0.90, mean=mean_downtime, sd=sd_downtime)\n",
+        "bound_90th_percentile"
+      ]
+    }
+  ]
+}
